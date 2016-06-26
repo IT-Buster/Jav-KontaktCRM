@@ -1,0 +1,8 @@
+
+public class Hello {
+	public Object Show() {
+		System.out.println("Test");
+		//System.out.println();
+		//System.err.println();
+	}
+}
