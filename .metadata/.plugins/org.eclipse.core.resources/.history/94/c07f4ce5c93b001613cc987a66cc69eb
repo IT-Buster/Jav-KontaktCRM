@@ -28,7 +28,7 @@ public class KontaktProperties {
 			output = new FileOutputStream("config.properties");
 			prop.setProperty("database", "192.168.0.100");
 			prop.setProperty("dbuser", "kontakt");
-			prop.setProperty("dbpassword", "12345");
+			prop.setProperty("dbpassword", "bonusmarengo");
 			prop.store(output, null);
 
 		} catch (IOException io) {
