@@ -15,7 +15,6 @@ public class KontaktProperties {
 		if (mode.equals("Prod")) {
 			System.out.println("Production Mode");
 			setKontaktProp();
-			
 		}
 	}
 
