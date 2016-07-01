@@ -8,8 +8,8 @@ public class KontaktInit {
 		System.out.println("Starting Apps:");
 		kontprop = new KontaktProperties("Test");
 		System.out.println( kontprop.getKontaktProp("dbuser") );
-		
-		
+		System.out.println("show"); 
+		System.out.println("test2"); 
 	}
 
 }
