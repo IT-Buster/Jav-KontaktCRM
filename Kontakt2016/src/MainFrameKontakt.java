@@ -9,7 +9,7 @@ public class MainFrameKontakt extends JFrame {
 		
 		frame = new JFrame("FrameDemo");
 		frame.setVisible(true);
-		
+		 
 	}
 
 	
