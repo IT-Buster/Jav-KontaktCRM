@@ -14,3 +14,7 @@
 2016-07-02 22:33:22,948 main DEBUG MainApp - This is  a debug message.
 2016-07-02 22:33:22,949 main INFO  MainApp - This is an info message.
 2016-07-02 22:33:22,949 main ERROR MainApp - This is an error message
+2016-07-02 22:41:06,780 main TRACE MainApp - This is a trace message.MainApp
+2016-07-02 22:41:06,782 main DEBUG MainApp - This is  a debug message.
+2016-07-02 22:41:06,782 main INFO  MainApp - This is an info message.
+2016-07-02 22:41:06,782 main ERROR MainApp - This is an error message
