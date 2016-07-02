@@ -11,7 +11,7 @@
       <Loggers>
         <Logger name="MainApp" level="trace">
           <AppenderRef ref="FileLogger"/>
-        </Logger>
+        </Logger> 
         <Root level="trace">
           <AppenderRef ref="STDOUT"/>
         </Root>
