@@ -1,0 +1,16 @@
+2016-07-02 22:32:43,966 main TRACE MainApp - This is a trace message.MainApp
+2016-07-02 22:32:43,968 main DEBUG MainApp - This is  a debug message.
+2016-07-02 22:32:43,968 main INFO  MainApp - This is an info message.
+2016-07-02 22:32:43,968 main ERROR MainApp - This is an error message
+2016-07-02 22:32:45,723 main TRACE MainApp - This is a trace message.MainApp
+2016-07-02 22:32:45,725 main DEBUG MainApp - This is  a debug message.
+2016-07-02 22:32:45,725 main INFO  MainApp - This is an info message.
+2016-07-02 22:32:45,725 main ERROR MainApp - This is an error message
+2016-07-02 22:33:21,221 main TRACE MainApp - This is a trace message.MainApp
+2016-07-02 22:33:21,223 main DEBUG MainApp - This is  a debug message.
+2016-07-02 22:33:21,223 main INFO  MainApp - This is an info message.
+2016-07-02 22:33:21,224 main ERROR MainApp - This is an error message
+2016-07-02 22:33:22,946 main TRACE MainApp - This is a trace message.MainApp
+2016-07-02 22:33:22,948 main DEBUG MainApp - This is  a debug message.
+2016-07-02 22:33:22,949 main INFO  MainApp - This is an info message.
+2016-07-02 22:33:22,949 main ERROR MainApp - This is an error message
