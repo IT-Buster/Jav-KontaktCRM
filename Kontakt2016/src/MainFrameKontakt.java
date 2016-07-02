@@ -4,7 +4,7 @@ public class MainFrameKontakt extends JFrame {
 
 	private JFrame frame;
 
-	public MainFrameKontakt() {
+	public MainFrameKontakt() { 
 		
 		
 		frame = new JFrame("FrameDemo");
