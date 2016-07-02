@@ -13,7 +13,7 @@ public class MainApp {
 		
 		//logowanie 
 		System.out.println("Starting Apps:");
-			
+		 	
 		
 		log4j.trace("This is a trace message." + log4j.getName());
 		log4j.debug("This is  a debug message.");
