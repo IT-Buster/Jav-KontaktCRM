@@ -23,7 +23,7 @@ public class MainApp {
 		// MainFrameKontakt mainframe = new MainFrameKontakt();
 		// Okienko logowania - jeœli ok to uruchom menu
 
-		final JFrame frame = new JFrame("Main Frame");
+		final JFrame frame = new JFrame("Main Frame"); 
 		final JButton btnLogin = new JButton("Click to login");
 
 		btnLogin.addActionListener(new ActionListener() {
