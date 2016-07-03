@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <Configuration>
       <Appenders>
-        <File name="FileLogger" fileName="MainApp.log" append="true">
-          <PatternLayout pattern="%d %t %-5p %c{2} - %m%n"/>
-        </File>
+		<RollingFile name="RollingFile" fileName="MainApp.log"
+		filePattern="MainApp-%d{yyyy-MM-dd}-%i.log" >
+			<PatternLayout>
+				<pattern>%d %-5p [%t] %C{2} (%F:%L) - %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="100 KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="4"/>
+		</RollingFile>
         <Console name="STDOUT" target="SYSTEM_OUT">
           <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
         </Console>
       </Appenders>
       <Loggers> 
         <Logger name="MainApp" level="trace">
-          <AppenderRef ref="FileLogger"/>
+          <AppenderRef ref="RollingFile"/>
         </Logger> 
         <Root level="trace">
           <AppenderRef ref="STDOUT"/>

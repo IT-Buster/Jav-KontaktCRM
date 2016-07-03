@@ -12,7 +12,7 @@ public class MainApp {
 	public static void main(String[] args) {
 		
 		//logowanie 
-		System.out.println("Starting Apps:");
+		log4j.info("Starting Apps:");
 		 	
 		
 		log4j.trace("This is a trace message." + log4j.getName());
