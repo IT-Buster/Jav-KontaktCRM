@@ -1,2 +1,2 @@
 # origin
-Yhis is simple appliaction CMR for business
+This is simple appliaction CMR for business
