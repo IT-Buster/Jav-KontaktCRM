@@ -1,2 +1,2 @@
 # origin
-This is simple appliaction CMR for business
+This is simple application CMR for business
