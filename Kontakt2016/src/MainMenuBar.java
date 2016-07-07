@@ -8,8 +8,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class MainMenuBar extends JMenuBar {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+public class MainMenuBar extends JMenuBar {
+	private static final Logger log4j = LogManager.getLogger(MainApp.class.getName());
 	public MainMenuBar() {
 
 		JMenu file = new JMenu("Plik");
@@ -23,8 +26,16 @@ public class MainMenuBar extends JMenuBar {
 		add(edit);
 		add(tools);
 		add(Box.createHorizontalGlue());
-		exit.addActionListener(new exitApp());
 		add(exit);
+		//exit.addActionListener(new exitApp());
+		exit.addActionListener(new ActionListener() {
+			 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				log4j.info("TEST");
+				
+			}
+		});
 	}
 
 	public static void main(String[] args) {
