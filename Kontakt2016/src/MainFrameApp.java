@@ -18,11 +18,12 @@ public class MainFrameApp extends JFrame {
 					btnLogin.setText("Hi " + loginDlg.getUsername() + "!");
 				}
 			}
-		});
+		}); 
 */
 		MainMenuBar mainmenu = new MainMenuBar();
-		setJMenuBar(mainmenu);
 		
+		setJMenuBar(mainmenu);
+		 
 		TextArea textarea = new TextArea();
 		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

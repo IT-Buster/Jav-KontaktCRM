@@ -62,3 +62,9 @@
 2016-07-07 10:46:19,311 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
 2016-07-07 10:52:03,453 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
 2016-07-07 10:52:03,454 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-07 13:53:10,898 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-07 13:53:10,900 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-07 13:57:20,969 INFO  [AWT-EventQueue-0] MainMenuBar$exitApp (MainMenuBar.java:71) - Application Exited
+2016-07-07 14:02:40,072 INFO  [AWT-EventQueue-0] MainMenuBar$exitApp (MainMenuBar.java:80) - Application Exited
+2016-07-07 14:04:22,877 INFO  [AWT-EventQueue-0] MainMenuBar$exitApp (MainMenuBar.java:90) - Application Exited
+2016-07-07 14:04:49,110 INFO  [AWT-EventQueue-0] MainMenuBar$exitApp (MainMenuBar.java:90) - Application Exited
