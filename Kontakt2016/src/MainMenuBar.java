@@ -27,16 +27,8 @@ public class MainMenuBar extends JMenuBar {
 		add(tools);
 		add(Box.createHorizontalGlue());
 		add(exit);
-		// exit.addActionListener(new exitApp());
-		exit.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				log4j.info("TEST");
-
-			}
-		});
-
+		exit.addActionListener(new exitApp());
+		
 		file.addActionListener(new ActionListener() {
 
 			@Override
