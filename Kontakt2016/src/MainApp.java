@@ -10,49 +10,30 @@ public class MainApp {
 	private static final Logger log4j = LogManager.getLogger(MainApp.class.getName());
 
 	// private static PropertiesApp kontprop;
-
-	public static void main(String[] args) {
-
-		// logowanie
+	public MainApp() {
+		///ustawienie srodowiska
+		setEnv("TST");
 		log4j.info("Starting Apps:");
-
-		// ustawiam œrodowisko TST DEV PRD
-		// setEnv("TST");
-		// kontprop = new PropertiesApp("Test");
-		// System.out.println( kontprop.getKontaktProp("dbuser") );
+		log4j.info("Set Env:"+getEnv());
+		//za³adowanie parametrów z plików konfiguracyjnych 
+		//kontprop = new PropertiesApp("Test");
+		//System.out.println( kontprop.getKontaktProp("dbuser") );
 		// MainFrameKontakt mainframe = new MainFrameKontakt();
 		// Okienko logowania - jeœli ok to uruchom menu
-
-		final JFrame frame = new JFrame("Main Frame"); 
-		JButton btnLogin = new JButton("Click to login");
-
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				LoginDialog loginDlg = new LoginDialog(frame);
-				loginDlg.setVisible(true);
-				// if logon successfully
-				if (loginDlg.isSucceeded()) {
-					btnLogin.setText("Hi " + loginDlg.getUsername() + "!");
-				}
-			}
-		});
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500, 300);
-		frame.setLocationRelativeTo(null);
-		frame.setLayout(new FlowLayout());
+		// uruchomienie glównej ramki aplikacji
+		MainFrameApp mainframe = new MainFrameApp();
 		
-		//frame.getContentPane().add(btnLogin);
-		
-		frame.setVisible(true);
-
+	}
+	
+	public static void main(String[] args) {	
+		new MainApp();
 	}
 
-	public String getEnv() {
+	private String getEnv() {
 		return env;
 	}
 
-	public void setEnv(String env) {
+	private void setEnv(String env) {
 		this.env = env;
 	}
 
