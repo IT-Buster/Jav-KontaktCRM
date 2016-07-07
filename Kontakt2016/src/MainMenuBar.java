@@ -19,8 +19,6 @@ public class MainMenuBar extends JMenuBar {
 		JMenu edit = new JMenu("Edycja");
 		JMenu tools = new JMenu("Narzêdzia");
 		JMenu exit = new JMenu("Exit");
-		// JMenu help = new JMenu("Help");
-		// JMenuItem about = new JMenuItem("About");
 
 		add(file);
 		add(edit);

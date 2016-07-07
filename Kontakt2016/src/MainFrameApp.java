@@ -21,7 +21,7 @@ public class MainFrameApp extends JFrame {
 		}); 
 */
 		MainMenuBar mainmenu = new MainMenuBar();
-		
+
 		setJMenuBar(mainmenu);
 		 
 		TextArea textarea = new TextArea();
