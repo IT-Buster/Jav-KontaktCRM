@@ -13,8 +13,8 @@ public class LoginDialog extends JDialog {
     private JButton btnCancel;
     private boolean succeeded;
  
-    public LoginDialog(MainApp mainapp) {
-        //super(mainapp, "Login", true);
+    public LoginDialog(MainFrameApp mainframe) {
+        super(mainframe, "Login", true); 
     	setTitle("Logowanie");
         //
         JPanel panel = new JPanel(new GridBagLayout());
@@ -90,7 +90,7 @@ public class LoginDialog extends JDialog {
  
         pack();
         setResizable(false);
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(mainframe); 
     }
  
     public String getUsername() {
