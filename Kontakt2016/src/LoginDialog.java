@@ -32,6 +32,7 @@ public class LoginDialog extends JDialog {
         cs.gridx = 1;
         cs.gridy = 0;
         cs.gridwidth = 2;
+        tfUsername.setText("bob");
         panel.add(tfUsername, cs);
  
         lbPassword = new JLabel("Password: ");
@@ -44,6 +45,7 @@ public class LoginDialog extends JDialog {
         cs.gridx = 1;
         cs.gridy = 1;
         cs.gridwidth = 2;
+        pfPassword.setText("secret");
         panel.add(pfPassword, cs);
         panel.setBorder(new LineBorder(Color.GRAY));
  

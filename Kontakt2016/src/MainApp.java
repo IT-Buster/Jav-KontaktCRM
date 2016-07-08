@@ -36,12 +36,15 @@ public class MainApp {
 		 
 		 MainApp mainapp = new MainApp();
 		
-		 LoginDialog loginDlg = new LoginDialog(mainapp); 
+		 LoginDialog loginDlg = new LoginDialog(mainapp);
          loginDlg.setVisible(true);
          log4j.debug("Logowanie do Systemu");
         
          if(loginDlg.isSucceeded()){
+        	 log4j.debug("Poprawne has³o !!");
         	 mainapp.mainframe.setVisible(true);
+         }else{
+        	 log4j.debug("B³ad Logowania !!");
          }
 	}
 
