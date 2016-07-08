@@ -2,7 +2,7 @@
 import java.sql.*;
 
 public class FirstExample {
-   // JDBC driver name and database URL
+   // JDBC driver name and database URL     HEIDISQL Portable
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
    static final String DB_URL = "jdbc:mysql://sql.bk.waw.pl/18430467_kontakt";
 
