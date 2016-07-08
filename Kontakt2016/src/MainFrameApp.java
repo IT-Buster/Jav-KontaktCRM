@@ -50,9 +50,6 @@ public class MainFrameApp extends JFrame {
 
 		menubar.add(Box.createHorizontalGlue());
 
-		// JMenu help = new JMenu("Help");
-		// menubar.add(help);
-
 		JMenuItem exit = new JMenuItem("Exit");
 		menubar.add(exit);
 		exit.addActionListener(new exitApp());

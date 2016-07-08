@@ -148,3 +148,15 @@
 2016-07-08 15:16:27,733 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
 2016-07-08 15:16:32,409 DEBUG [main] MainApp (MainApp.java:28) - Logowanie do Systemu
 2016-07-08 15:16:32,410 DEBUG [main] MainApp (MainApp.java:31) - Poprawne has³o !!
+2016-07-08 15:19:12,797 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 15:19:12,799 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 15:19:19,253 DEBUG [main] MainApp (MainApp.java:28) - Logowanie do Systemu
+2016-07-08 15:19:19,255 DEBUG [main] MainApp (MainApp.java:31) - Poprawne has³o !!
+2016-07-08 15:19:59,903 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 15:19:59,905 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 15:20:02,169 DEBUG [main] MainApp (MainApp.java:28) - Logowanie do Systemu
+2016-07-08 15:20:02,170 DEBUG [main] MainApp (MainApp.java:31) - Poprawne has³o !!
+2016-07-08 15:20:09,785 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 15:20:09,787 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 15:20:17,634 DEBUG [main] MainApp (MainApp.java:28) - Logowanie do Systemu
+2016-07-08 15:20:17,635 DEBUG [main] MainApp (MainApp.java:34) - B³ad Logowania !!
