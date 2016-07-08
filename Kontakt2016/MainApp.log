@@ -71,3 +71,42 @@
 2016-07-07 14:08:13,871 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
 2016-07-07 14:08:13,872 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
 2016-07-07 14:10:44,624 INFO  [AWT-EventQueue-0] MainMenuBar$exitApp (MainMenuBar.java:80) - Application Exited
+2016-07-08 08:12:26,816 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:12:26,821 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:18:00,658 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:18:00,660 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:26:09,073 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:26:09,074 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:30:49,918 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:30:49,920 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:44:42,545 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:44:42,547 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:45:03,212 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:45:03,214 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:48:45,043 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:48:45,045 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 08:50:02,040 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 08:50:02,042 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 09:01:20,224 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 09:01:20,225 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 12:30:06,504 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 12:30:06,506 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 12:46:44,499 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 12:46:44,500 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 12:56:19,833 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 12:56:19,835 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 14:02:52,993 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 14:02:52,995 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 14:24:50,669 DEBUG [main] MainApp (MainApp.java:33) - Logowanie do Sysytemu
+2016-07-08 14:29:38,111 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 14:29:38,112 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 14:29:38,397 DEBUG [main] MainApp (MainApp.java:33) - Logowanie do Sysytemu
+2016-07-08 14:30:13,384 INFO  [main] MainApp (MainApp.java:16) - Starting Apps:
+2016-07-08 14:30:13,385 INFO  [main] MainApp (MainApp.java:17) - Set Env:TST
+2016-07-08 14:30:13,658 DEBUG [main] MainApp (MainApp.java:34) - Logowanie do Sysytemu
+2016-07-08 14:39:32,703 INFO  [main] MainApp (MainApp.java:18) - Starting Apps:
+2016-07-08 14:39:32,705 INFO  [main] MainApp (MainApp.java:19) - Set Env:TST
+2016-07-08 14:39:32,975 DEBUG [main] MainApp (MainApp.java:41) - Logowanie do Sysytemu
+2016-07-08 14:43:42,031 INFO  [main] MainApp (MainApp.java:18) - Starting Apps:
+2016-07-08 14:43:42,032 INFO  [main] MainApp (MainApp.java:19) - Set Env:TST
+2016-07-08 14:43:42,290 DEBUG [main] MainApp (MainApp.java:41) - Logowanie do Systemu

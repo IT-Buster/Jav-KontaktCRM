@@ -1,36 +1,70 @@
-import java.awt.FlowLayout;
-import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.Box;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class MainFrameApp extends JFrame {
 
-	public MainFrameApp() { 
+	public static class OpenMyContactFrame implements ActionListener {
 
-		//final JFrame frame = new JFrame("Main Frame"); 
-/*		JButton btnLogin = new JButton("Click to login");
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new MyContactFrame();
+		}
 
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				LoginDialog loginDlg = new LoginDialog( frame );
-				loginDlg.setVisible(true);
-				if (loginDlg.isSucceeded()) {
-					btnLogin.setText("Hi " + loginDlg.getUsername() + "!");
-				}
-			}
-		}); 
-*/
-		MainMenuBar mainmenu = new MainMenuBar();
+	}
 
-		setJMenuBar(mainmenu);
-		 
-		TextArea textarea = new TextArea();
+	static class exitApp implements ActionListener {
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(600, 400);
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.exit(0);
+		}
+	}
+
+	public MainFrameApp() {
+
+		setSize(300, 300);
 		setLocationRelativeTo(null);
-		setLayout(new FlowLayout());
-		getContentPane().add(textarea);
-		setVisible(true);  
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+		JMenuBar menubar = new JMenuBar();
+		setJMenuBar(menubar);
+
+		JMenu kontakty = new JMenu("Kontakty");
+		menubar.add(kontakty);
+
+		JMenuItem mojekontakty = new JMenuItem("Moje Kontakty");
+		kontakty.add(mojekontakty);
+		mojekontakty.addActionListener(new OpenMyContactFrame());
+
+		JMenuItem mailing = new JMenuItem("Mailing");
+		kontakty.add(mailing);
+
+		JMenuItem mojegrupy = new JMenuItem("Grupy");
+		kontakty.add(mojegrupy);
+
+		menubar.add(Box.createHorizontalGlue());
+
+		// JMenu help = new JMenu("Help");
+		// menubar.add(help);
+
+		JMenuItem exit = new JMenuItem("Exit");
+		menubar.add(exit);
+		exit.addActionListener(new exitApp());
+
+		setJMenuBar(menubar);
+
+		setJMenuBar(menubar);
+		setVisible(false);
+
+	}
+
+	public static void main(String[] args) {
+		new MainFrameApp();
 	}
 }
