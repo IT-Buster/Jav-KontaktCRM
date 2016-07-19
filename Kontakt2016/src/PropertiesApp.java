@@ -9,12 +9,12 @@ public class PropertiesApp {
 	public PropertiesApp(String mode) {
 		if (mode.equals("Test")) {
 			System.out.println("Testing Mode");
-			setKontaktProp();
+			//setKontaktProp();
 		}
 
 		if (mode.equals("Prod")) {
 			System.out.println("Production Mode");
-			setKontaktProp();
+			//setKontaktProp();
 		}
 	}
 
@@ -26,9 +26,16 @@ public class PropertiesApp {
 		try {
 			
 			output = new FileOutputStream("config.properties");
-			prop.setProperty("database", "192.168.0.100");
-			prop.setProperty("dbuser", "kontakt");
-			prop.setProperty("dbpassword", "12345");
+			//prop.setProperty("host_prod", "sql.bk.waw.pl");
+			//prop.setProperty("database_prod", "18430467_kontakt");
+			//prop.setProperty("dbuser_prod", "18430467_kontakt");
+			//prop.setProperty("dbpassword_prod", "QQnamuniU30");
+			
+			//prop.setProperty("host_dev", "sql.bk.waw.pl");
+			//prop.setProperty("database_dev", "18430467_kontakt");
+			//prop.setProperty("dbuser_dev", "18430467_kontakt");
+			//prop.setProperty("dbpassword_dev", "QQnamuniU30");
+			
 			prop.store(output, null);
 
 		} catch (IOException io) {
