@@ -8,7 +8,7 @@ public class MyContactFrame extends JFrame {
 	
 		setSize(600, 400);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Moje Kontakty");
 
 		JMenuBar menubar = new JMenuBar();

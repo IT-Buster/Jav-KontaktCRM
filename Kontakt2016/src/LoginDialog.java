@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class LoginDialog extends JDialog {
 
@@ -15,8 +17,42 @@ public class LoginDialog extends JDialog {
 
 	public LoginDialog(MainFrameApp mainframe) {
 		super(mainframe, "Login", true);
+
+		addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				System.exit(0);
+			}
+		});
+
+		KeyListener listener = new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					if (Login.authenticate(getUsername(), getPassword())) {
+						succeeded = true;
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(LoginDialog.this, "B³êdny login lub has³o", "Login",
+								JOptionPane.ERROR_MESSAGE);
+						tfUsername.setText("");
+						pfPassword.setText("");
+						succeeded = false;
+					}
+				}
+			}
+		};
+
 		setTitle("Logowanie");
-		//
+
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints cs = new GridBagConstraints();
 
@@ -32,7 +68,8 @@ public class LoginDialog extends JDialog {
 		cs.gridx = 1;
 		cs.gridy = 0;
 		cs.gridwidth = 2;
-		tfUsername.setText("bob");
+		tfUsername.setText(PropertiesApp.getProp("login_default"));
+		tfUsername.addKeyListener(listener);
 		panel.add(tfUsername, cs);
 
 		lbPassword = new JLabel("Password: ");
@@ -45,41 +82,40 @@ public class LoginDialog extends JDialog {
 		cs.gridx = 1;
 		cs.gridy = 1;
 		cs.gridwidth = 2;
-		pfPassword.setText("secret");
+		pfPassword.setText(PropertiesApp.getProp("password_default"));
+		pfPassword.addKeyListener(listener);
+
 		panel.add(pfPassword, cs);
 		panel.setBorder(new LineBorder(Color.GRAY));
 
 		btnLogin = new JButton("Login");
 
-		btnLogin.addActionListener(new ActionListener() {
-
+		ActionListener listenAndCheck = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (Login.authenticate(getUsername(), getPassword())) {
-					// JOptionPane.showMessageDialog(LoginDialog.this,
-					// "Hi " + getUsername() + "! You have successfully logged
-					// in.",
-					// "Login",
-					// JOptionPane.INFORMATION_MESSAGE);
 					succeeded = true;
 					dispose();
 				} else {
-					JOptionPane.showMessageDialog(LoginDialog.this, "Invalid username or password", "Login",
+					JOptionPane.showMessageDialog(LoginDialog.this, "B³êdny login lub has³o", "Login",
 							JOptionPane.ERROR_MESSAGE);
-					// reset username and password
 					tfUsername.setText("");
 					pfPassword.setText("");
 					succeeded = false;
-
 				}
 			}
-		});
+		};
+		
+		btnLogin.addActionListener(listenAndCheck);
+		
+		
 		btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				System.exit(0);
 			}
 		});
+
 		JPanel bp = new JPanel();
 		bp.add(btnLogin);
 		bp.add(btnCancel);
@@ -103,4 +139,9 @@ public class LoginDialog extends JDialog {
 	public boolean isSucceeded() {
 		return succeeded;
 	}
+	
+	
+	
+	
+	
 }

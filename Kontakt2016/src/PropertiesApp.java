@@ -5,16 +5,16 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 public class PropertiesApp {
+	
+	private static String mode; 
 
 	public PropertiesApp(String mode) {
-		if (mode.equals("Test")) {
-			System.out.println("Testing Mode");
-			//setKontaktProp();
-		}
-
-		if (mode.equals("Prod")) {
-			System.out.println("Production Mode");
-			//setKontaktProp();
+		if (mode.equals("Dev")) {
+			setMode(mode);
+		}else if (mode.equals("Prd")) {
+			setMode(mode);
+		}else{
+			System.exit(0);
 		}
 	}
 
@@ -24,18 +24,9 @@ public class PropertiesApp {
 		OutputStream output = null;
 
 		try {
-			
-			output = new FileOutputStream("config.properties");
-			//prop.setProperty("host_prod", "sql.bk.waw.pl");
-			//prop.setProperty("database_prod", "18430467_kontakt");
-			//prop.setProperty("dbuser_prod", "18430467_kontakt");
-			//prop.setProperty("dbpassword_prod", "QQnamuniU30");
-			
-			//prop.setProperty("host_dev", "sql.bk.waw.pl");
-			//prop.setProperty("database_dev", "18430467_kontakt");
-			//prop.setProperty("dbuser_dev", "18430467_kontakt");
-			//prop.setProperty("dbpassword_dev", "QQnamuniU30");
-			
+			if(getMode()=="Prd" ) output = new FileOutputStream("config.prd.properties");
+			if(getMode()=="Dev" ) output = new FileOutputStream("config.dev.properties");
+			//prop.setProperty("host", "sql.bk.waw.pl");
 			prop.store(output, null);
 
 		} catch (IOException io) {
@@ -52,14 +43,14 @@ public class PropertiesApp {
 		}
 	}
 
-	public String getKontaktProp(String key) {
+	public static String getProp(String key) {
 
 		Properties prop = new Properties();
 		OutputStream output = null;
 
 		try {
-			prop.load(new FileInputStream("config.properties"));
-
+			if(getMode()=="Dev" ) prop.load(new FileInputStream("config.dev.properties"));
+			if(getMode()=="Prod" ) prop.load(new FileInputStream("config.prd.properties"));
 		} catch (IOException io) {
 			io.printStackTrace();
 		} finally {
@@ -74,6 +65,14 @@ public class PropertiesApp {
 		}
 		return prop.getProperty(key);
 
+	}
+
+	public static String getMode() {
+		return mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
 	}
 
 }

@@ -4,28 +4,38 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class TableFromMySqlDatabase extends JFrame
+public class DBConnect
 {
-    public TableFromMySqlDatabase()
+	private String query;
+	private ResultSet rs;
+	public int count;
+	
+    public String getQuery() {
+		return query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+	}
+
+	public DBConnect(String sql)
     {
+    	setQuery(sql);
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
 
-        //  Connect to an MySQL Database, run query, get result set
-        String url = "jdbc:mysql://sql.bk.waw.pl/18430467_kontakt";
-        String userid = "18430467_kontakt";
-        String password = "QQnamuniU30";
-        String sql = "SELECT * FROM customer";
+        String url = "jdbc:mysql://"+PropertiesApp.getProp("host")+"/"+PropertiesApp.getProp("database");
 
-        // Java SE 7 has try-with-resources
-        // This will ensure that the sql objects are closed when the program 
-        // is finished with them
-        try (Connection connection = DriverManager.getConnection( url, userid, password );
+        try (Connection connection = DriverManager.getConnection( url, PropertiesApp.getProp("dbuser"), PropertiesApp.getProp("dbpassword"));
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery( sql ))
         {
-            ResultSetMetaData md = rs.getMetaData();
+            this.rs = rs;
+        	
+        	ResultSetMetaData md = rs.getMetaData();
             int columns = md.getColumnCount();
+            
+            System.out.println("kolumn: "+columns);
 
             //  Get column names
             for (int i = 1; i <= columns; i++)
@@ -42,7 +52,7 @@ public class TableFromMySqlDatabase extends JFrame
                 {
                     row.add( rs.getObject(i) );
                 }
-
+                this.count++;
                 data.add( row );
             }
         }
@@ -90,19 +100,14 @@ public class TableFromMySqlDatabase extends JFrame
                 return Object.class;
             }
         };
-
+/*
         JScrollPane scrollPane = new JScrollPane( table );
         getContentPane().add( scrollPane );
 
         JPanel buttonPanel = new JPanel();
         getContentPane().add( buttonPanel, BorderLayout.SOUTH );
+*/
     }
+	
 
-    public static void main(String[] args)
-    {
-        TableFromMySqlDatabase frame = new TableFromMySqlDatabase();
-        frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
-        frame.pack();
-        frame.setVisible(true);
-    }
 }
