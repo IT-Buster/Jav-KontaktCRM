@@ -22,7 +22,7 @@
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://sql.bk.waw.pl:3306/18430467_kontakt" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="validate" /> -->
 		</properties>
 	</persistence-unit>
 </persistence>

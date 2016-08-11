@@ -2,6 +2,9 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.metawidget.inspector.annotation.UiHidden;
+
 import java.util.List;
 
 
@@ -44,7 +47,7 @@ public class Category implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	@UiHidden
 	public List<Customer> getCustomers() {
 		return this.customers;
 	}

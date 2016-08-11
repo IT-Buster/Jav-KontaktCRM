@@ -51,8 +51,12 @@ public class MenuApp {
         menuItem.getAccessibleContext().setAccessibleDescription(
                 "This doesn't really do anything");
         menu.add(menuItem);
- 
-        ImageIcon icon = createImageIcon("images/middle.gif");
+        
+        String currentDir = System.getProperty("user.dir");
+        System.out.println("Current dir using System:" +currentDir);
+        
+        
+        ImageIcon icon = createImageIcon("/images/middle.gif");
         menuItem = new JMenuItem("Both text and icon", icon);
         menuItem.setMnemonic(KeyEvent.VK_B);
         menu.add(menuItem);
