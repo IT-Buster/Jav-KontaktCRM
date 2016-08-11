@@ -17,8 +17,8 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private byte id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="create_date")
@@ -46,10 +46,6 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="user3")
 	private List<Contact> contacts3;
 
-	//bi-directional many-to-many association to Contact
-	@ManyToMany(mappedBy="users")
-	private List<Contact> contacts4;
-
 	//bi-directional many-to-one association to Customer
 	@OneToMany(mappedBy="user1")
 	private List<Customer> customers1;
@@ -69,11 +65,11 @@ public class User implements Serializable {
 	public User() {
 	}
 
-	public byte getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(byte id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -181,14 +177,6 @@ public class User implements Serializable {
 		contacts3.setUser3(null);
 
 		return contacts3;
-	}
-
-	public List<Contact> getContacts4() {
-		return this.contacts4;
-	}
-
-	public void setContacts4(List<Contact> contacts4) {
-		this.contacts4 = contacts4;
 	}
 
 	public List<Customer> getCustomers1() {

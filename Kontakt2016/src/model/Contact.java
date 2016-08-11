@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 /**
@@ -17,7 +16,7 @@ public class Contact implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String id;
 
 	private String businessphone;
@@ -38,7 +37,7 @@ public class Contact implements Serializable {
 	private Date lastEventDate;
 
 	@Column(name="last_event_type")
-	private byte lastEventType;
+	private int lastEventType;
 
 	private String lastname;
 
@@ -51,11 +50,6 @@ public class Contact implements Serializable {
 	private Date modifyDate;
 
 	private String office;
-
-	//bi-directional many-to-one association to CustType
-	@ManyToOne
-	@JoinColumn(name="type_id")
-	private CustType custType;
 
 	//bi-directional many-to-one association to Customer
 	@ManyToOne
@@ -77,18 +71,10 @@ public class Contact implements Serializable {
 	@JoinColumn(name="modified_by")
 	private User user3;
 
-	//bi-directional many-to-many association to User
-	@ManyToMany
-	@JoinTable(
-		name="guard_cust"
-		, joinColumns={
-			@JoinColumn(name="contact_id")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="user_id")
-			}
-		)
-	private List<User> users;
+	//bi-directional many-to-one association to CustType
+	@ManyToOne
+	@JoinColumn(name="type_id")
+	private CustType custType;
 
 	public Contact() {
 	}
@@ -149,11 +135,11 @@ public class Contact implements Serializable {
 		this.lastEventDate = lastEventDate;
 	}
 
-	public byte getLastEventType() {
+	public int getLastEventType() {
 		return this.lastEventType;
 	}
 
-	public void setLastEventType(byte lastEventType) {
+	public void setLastEventType(int lastEventType) {
 		this.lastEventType = lastEventType;
 	}
 
@@ -197,14 +183,6 @@ public class Contact implements Serializable {
 		this.office = office;
 	}
 
-	public CustType getCustType() {
-		return this.custType;
-	}
-
-	public void setCustType(CustType custType) {
-		this.custType = custType;
-	}
-
 	public Customer getCustomer() {
 		return this.customer;
 	}
@@ -237,12 +215,12 @@ public class Contact implements Serializable {
 		this.user3 = user3;
 	}
 
-	public List<User> getUsers() {
-		return this.users;
+	public CustType getCustType() {
+		return this.custType;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setCustType(CustType custType) {
+		this.custType = custType;
 	}
 
 }

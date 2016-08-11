@@ -26,7 +26,7 @@ public class FirstExample {
       System.out.println("Creating statement...");
       stmt = conn.createStatement();
       String sql;
-      sql = "SELECT id, name,NIP FROM firma";
+      sql = "SELECT id, name,NIP FROM customer";
       ResultSet rs = stmt.executeQuery(sql);
 
       //STEP 5: Extract data from result set

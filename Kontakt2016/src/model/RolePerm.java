@@ -15,10 +15,10 @@ public class RolePerm implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private byte id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 
-	private String access;
+	private int access;
 
 	//bi-directional many-to-one association to Permission
 	@ManyToOne
@@ -32,19 +32,19 @@ public class RolePerm implements Serializable {
 	public RolePerm() {
 	}
 
-	public byte getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(byte id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getAccess() {
+	public int getAccess() {
 		return this.access;
 	}
 
-	public void setAccess(String access) {
+	public void setAccess(int access) {
 		this.access = access;
 	}
 

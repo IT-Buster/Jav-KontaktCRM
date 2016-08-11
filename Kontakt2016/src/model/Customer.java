@@ -11,12 +11,13 @@ import java.util.List;
  * 
  */
 @Entity
+@Table(name="customer")
 @NamedQuery(name="Customer.findAll", query="SELECT c FROM Customer c")
 public class Customer implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String id;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,11 +45,6 @@ public class Customer implements Serializable {
 	@OneToMany(mappedBy="customer")
 	private List<Contact> contacts;
 
-	//bi-directional many-to-one association to Category
-	@ManyToOne
-	@JoinColumn(name="trade_id")
-	private Category category;
-
 	//bi-directional many-to-one association to CustType
 	@ManyToOne
 	@JoinColumn(name="type_id")
@@ -63,6 +59,11 @@ public class Customer implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="modified_by")
 	private User user2;
+
+	//bi-directional many-to-one association to Category
+	@ManyToOne
+	@JoinColumn(name="trade_id")
+	private Category category;
 
 	public Customer() {
 	}
@@ -161,14 +162,6 @@ public class Customer implements Serializable {
 		return contact;
 	}
 
-	public Category getCategory() {
-		return this.category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
 	public CustType getCustType() {
 		return this.custType;
 	}
@@ -191,6 +184,14 @@ public class Customer implements Serializable {
 
 	public void setUser2(User user2) {
 		this.user2 = user2;
+	}
+
+	public Category getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 }

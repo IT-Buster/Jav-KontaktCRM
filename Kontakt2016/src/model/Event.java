@@ -10,12 +10,13 @@ import java.util.Date;
  * 
  */
 @Entity
+@Table(name="event")
 @NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
 public class Event implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String id;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -25,15 +26,15 @@ public class Event implements Serializable {
 	@Lob
 	private String desc;
 
-	//bi-directional many-to-one association to EventType
-	@ManyToOne
-	@JoinColumn(name="event_id")
-	private EventType eventType;
-
 	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name="create_by")
 	private User user;
+
+	//bi-directional many-to-one association to EventType
+	@ManyToOne
+	@JoinColumn(name="event_id")
+	private EventType eventType;
 
 	public Event() {
 	}
@@ -62,20 +63,20 @@ public class Event implements Serializable {
 		this.desc = desc;
 	}
 
-	public EventType getEventType() {
-		return this.eventType;
-	}
-
-	public void setEventType(EventType eventType) {
-		this.eventType = eventType;
-	}
-
 	public User getUser() {
 		return this.user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public EventType getEventType() {
+		return this.eventType;
+	}
+
+	public void setEventType(EventType eventType) {
+		this.eventType = eventType;
 	}
 
 }

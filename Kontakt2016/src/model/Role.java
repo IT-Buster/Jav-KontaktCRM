@@ -16,8 +16,8 @@ public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private byte id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 
 	private String name;
 
@@ -32,11 +32,11 @@ public class Role implements Serializable {
 	public Role() {
 	}
 
-	public byte getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(byte id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
